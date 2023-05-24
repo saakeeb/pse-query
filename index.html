@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <title>Simple YouTube Video Search Engine</title>
+    <script async src="https://cse.google.com/cse.js?cx=3125650c2760e4e73"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="index.html">
+          <img
+            src="./assets/images/Squircle.png"
+            alt="Squircle logo, Pawxy logo"
+          />
+        </a>
+        <p>Simple Video Search Engine</p>
+      </div>
+      <main>
+        <div class="gcse-searchbox" data-as_sitesearch="youtube.com"></div>
+
+        <div id="search-results">
+          <div class="gcse-searchresults" data-refinementStyle="link"></div>
+        </div>
+      </main>
+
+      <div id="view-overlay">
+        <div class="view-overlay-frame">
+          <iframe
+            id="view-overlay-src"
+            width="100%"
+            height="50%"
+            src=""
+            frameborder="0"
+          ></iframe>
+          <div class="view-overlay-desc" id="view-overlay-desc">
+            <p class="title"></p>
+            <p class="views"></p>
+          </div>
+        </div>
+
+        <div id="view-overlay-actions">
+          <a target="_blank" rel="noreferrer" href="">
+            <button class="view-overlay__button" id="view-overlay-visit">
+              Visit
+            </button>
+          </a>
+          <button class="view-overlay__button" id="view-overlay-close">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
+
+<template id="result-card-template">
+  <div class="result-card" data-index="100" id="result-card">
+    <div class="result-card__img">
+      <img
+        id="result-card-thumbnail"
+        class="result-card__thumbnail"
+        src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRVnegVhAnN6yi0NVJ81bz7ifvSu-y5WCynt_69M-KZIJKAQ3B-NZl510Tw"
+        alt=""
+      />
+    </div>
+    <div class="result-card__desc">
+      <h2 id="result-card-title"></h2>
+      <div id="result-card-by" class="result-card__desc__by"></div>
+      <div class="result-card__desc__meta">
+        <div id="result-card-url">
+          <img
+            src=".//assets/images/youtube-icon.png"
+            width="16px"
+            height="16px"
+            alt="youtube icon"
+          />
+          Youtube.com
+        </div>
+        <span id="result-card-view-count"></span>
+      </div>
+    </div>
+  </div>
+</template>
